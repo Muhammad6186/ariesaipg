@@ -62,7 +62,7 @@ const listenMessage = async (event, pageAccessToken) => {
               quick_replies: [
                 {
                   content_type: "text",
-                  title: "-help",
+                  title: "/help",
                   payload: "HELP"
                 }
               ]
@@ -81,7 +81,7 @@ const listenMessage = async (event, pageAccessToken) => {
             quick_replies: [
               {
                 content_type: "text",
-                title: "-help",
+                title: "/help",
                 payload: "HELP"
                 //"image_url": "http://example.com/img/red.png"
               }

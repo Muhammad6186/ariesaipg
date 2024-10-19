@@ -5,10 +5,10 @@ const {
 const fs = require("fs");
 const SCRIPT_FILE = "page_bot.js";
 const SCRIPT_PATH = __dirname + "/" + SCRIPT_FILE;
-const GIT = process.env.repo || "https://github.com/neth7/Ws3-PageBot.git";
+const GIT = process.env.repo || "https://github.com/Muhammad6186/ariesaipg.git";
 
 async function Load() {
-  console.log(`Ws3 PageBot | Created by Kenneth Aceberos`);
+  console.log(`Aries AI | Remaked by Marjhxn`);
   const execute = async (cmd) => {
     await new Promise(async (resolve, reject) => {
       const buang = await exec(cmd, {
@@ -40,7 +40,7 @@ async function Load() {
           console.log(`Success: code ${exitCode}`);
         } else if (exitCode === 1) {
           console.log(`Error: code ${exitCode}`);
-          console.log(`Restarting WSE PageBot...`);
+          console.log(`Restarting Aries AI...`);
           Load();
         } else {
           console.log(`Error: code ${exitCode}`);

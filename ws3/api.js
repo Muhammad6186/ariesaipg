@@ -5,7 +5,7 @@ const axios = require("axios");
 const cmdLoc = __dirname + "/commands";
 const temp = __dirname + "/temp";
 const fs = require("fs");
-const prefix = "/";
+const prefix = "-";
 const commands = [];
 const descriptions = [];
 module.exports = {
@@ -61,8 +61,8 @@ module.exports = {
   temp,
   prefix,
   admin: [
-"8439419946124905",
-"9353065101379295"
+"8498758810218808",
+""
 ],
   async sendMessage(senderId, message, pageAccessToken) {
     return await new Promise(async (resolve, reject) => {
@@ -104,11 +104,10 @@ module.exports = {
     resolve(res.data);
     });
   },
-  introduction: `Hello, I am WieAI and I am your assistant.
-Type ${prefix}help for available commands.
+  introduction: `Hello, I am Aries AI, your assistant.
+Type ${prefix}help to view the available commands.
 
-Note: WieAI is highly recommended to use Messenger because some features won't work and limited.
-🤖 Created by Neth Aceberos`,
+𝗡𝗼𝘁𝗲: For optimal performance, it is highly recommended to use Messenger, as some features may not work or have limited functionality elsewhere`,
   api_josh: "https://deku-rest-apis.ooguy.com",
   echavie: "https://echavie3.nethprojects.workers.dev"
 }

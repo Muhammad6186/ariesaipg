@@ -4,9 +4,9 @@ const graph = id => [`https://graph.facebook.com/${id}/picture?width=720&height=
 const Toast = Swal.mixin({
   toast: true,
   position: "bottom-end",
-  background: "purple",
+  background: "blue",
   timer: 3*1000,
-  confirmButtonColor: "#aa00ff",
+  confirmButtonColor: "#007BFF",
   showCancelButton: false,
   timerProgressBar: true,
   didOpen (toast){
@@ -21,9 +21,9 @@ async function showResult(base, title, message, icon = "success", json = {}, res
     title,
     icon,
     html: message,
-    background: "purple",
+    background: "blue",
     showCancelButton: base !== Toast,
-    confirmButtonColor: "#aa00ff",
+    confirmButtonColor: "#007BFF",
     confirmButtonText: "Okay",
     ...json
   }).then(result);
@@ -147,7 +147,7 @@ addEventListener("DOMContentLoaded", async (event) => {
   }, async (result) => {
     try {
     if (result.isConfirmed){
-    const restart = await axios.get("/restart", {
+    const restart = await axios.get("-restart", {
       params: {
         pass: result.value
       }
@@ -170,11 +170,11 @@ addEventListener("DOMContentLoaded", async (event) => {
   */
   
   // add developer info here
-  await add(devInfo, "Name", "Kenneth Aceberos");
-  await add(devInfo, "Age", "17 y/o");
-  await add(devInfo, "Address", "Duero, Bohol");
+  await add(devInfo, "Name", "Marjhun Rey Lim");
+  await add(devInfo, "Age", "18 y/o");
+  await add(devInfo, "Address", "Metro Manila");
   // add your page admins here
-  await addImg(graph("100015801404865"), "Neth Aceberos");
-  await addImg(graph("100029350902119"), "Wiegine S. Echavez");
+  await addImg(graph("100027867581039"), "Marjhun Rey Lim");
+  await addImg(graph(""), "");
   setTimeout(() => window.scrollTo({top: 0, behavior: "smooth"}), 500);
 });

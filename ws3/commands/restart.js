@@ -11,7 +11,7 @@ async run({
 }){
     const rsFile = api.temp + "/restart";
     if (!admin) return send("Admin access only.");
-    send("Bot is restarting...");
+    send("Aries AI is now restarting. Please hold on for a moment...");
     fs.writeFileSync(rsFile, JSON.stringify({
       restartId: event.sender.id,
       time: Date.now()

@@ -4,6 +4,6 @@ module.exports = {
   async run({api,send,admin}){
     if (!admin) return send("Admin access only.");
     api.loadCommands();
-    return send("Reload command successfully. Restart Messenger or a conversation to take effect.");
+    return send("Reload command successful. Please restart Messenger or the conversation for the changes to take effect.");
   }
 }

@@ -18,7 +18,7 @@ module.exports = {
     if (!gpt || !gpt.data.status) throw new Error();
     return send(`${gpt.data.result}
 
-🤖 WieAI by Neth Aceberos`);
+🤖 Aries AI By: Marjhxn`);
     } catch(err){
       send(err.message || err);
       return;

@@ -1,5 +1,5 @@
 const axios = require("axios");
-const name = "wiegine";
+const name = "aries";
 module.exports = {
   name,
   description: "Interact with me!",

@@ -44,11 +44,11 @@ const listenMessage = async (event, pageAccessToken) => {
     admin = api.admin.some(id => id === senderID);
     switch (message.toLowerCase().trim()) {
     case "prefix": {
-      return send(`Hello! My prefix is ${prefix}`);
+      return send(`Greetings! My designated command prefix is ${prefix} for any interactions.`);
     }
     default: {
       if (!message) return;
-      if (["hi", "wie", "wieai", "wiegine", "get started"]
+      if (["hi", "aries", "ariesai", "aries", "get started"]
         .some(text => text === message.toLowerCase().trim())) {
          return getStarted(send);
       }
@@ -58,11 +58,11 @@ const listenMessage = async (event, pageAccessToken) => {
           const commandJs = require(api.cmdLoc + `/${command}`);
           if (commandJs.admin && !admin){
           return send({
-              text: `❌ Command ${command} is for admins only. Type or click (below) ${prefix}help to see available commands.`,
+              text: `⚠️ The command ${command} is restricted to admins only. Please type or click ${prefix}help below to view the available commands.`,
               quick_replies: [
                 {
                   content_type: "text",
-                  title: "/help",
+                  title: "-help",
                   payload: "HELP"
                 }
               ]
@@ -77,11 +77,11 @@ const listenMessage = async (event, pageAccessToken) => {
           });
         } else {
           return send({
-            text: `❌ Command${command ? ` ${command} ` : " "}doesn't exist! Type or click (below) ${prefix}help to see available commands.`,
+            text: `⚠️ The command${command ? ` ${command} ` : " "}does not exist. Please type or click (below) ${prefix}help below to view the available commands.`,
             quick_replies: [
               {
                 content_type: "text",
-                title: "/help",
+                title: "-help",
                 payload: "HELP"
                 //"image_url": "http://example.com/img/red.png"
               }
@@ -103,14 +103,14 @@ const listenPostback = async (event, pageAccessToken) => {
       return getStarted(send);
     }
     case "prefix": {
-      return send(`Hello! My prefix is ${prefix}`);
+      return send(`Greetings! My command prefix is ${prefix}. Feel free to use it for any interactions.`);
     }
     default: {
       const admin = api.admin.some(id => id === senderID);
       if (payload) {
       if (api.commands.some(cmd => cmd === payload)) {
-          const commandJs = require(api.cmdLoc + `/${payload}`);
-          if (commandJs.admin && !admin) return send("This command is for admins only.");
+          const commandJs = require(api.cmdLoc + `-${payload}`);
+          if (commandJs.admin && !admin) return send("This command is restricted to admins only.");
           await (commandJs.run || (() => {}))({
           api,
           event,

@@ -16,18 +16,18 @@ module.exports = {
         type: "template",
         payload: {
           template_type: "button",
-          text: `🤖 | These are the commands on Wie AI below.
-🔎 | Click every command to see the usage.`,
+          text: `🤖 | Below are the available commands for Aries AI.
+🔎 | Click on each command to view its usage.`,
           buttons: [
             {
               type: "web_url",
-              url: "https://www.facebook.com/kennethfranciscoaceberos",
-              title: "Contact Admin 1"
+              url: "https://www.facebook.com/marjhxn",
+              title: "Contact Admin"
             },
             {
               type: "web_url",
-              url: "https://www.facebook.com/wieginesalpocialechavez",
-              title: "Contact Admin 2"
+              url: "",
+              title: ""
             }
          ]
         }
